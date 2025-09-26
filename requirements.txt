@@ -1,0 +1,5 @@
+crewai==0.201.0
+langchain-google-genai==2.0.10
+flask==3.0.0
+flask-cors==4.0.0
+gunicorn==21.2.0

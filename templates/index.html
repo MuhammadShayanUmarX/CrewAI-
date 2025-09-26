@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XtarzLab - AI Content Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" id="newAnalysisBtn">
+                    <i class="fas fa-plus"></i>
+                    <span>New Analysis</span>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="chat-history">
+                    <h3>Recent Analyses</h3>
+                    <div class="history-list" id="historyList">
+                        <!-- History items will be added here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">XtarzLab User</span>
+                        <span class="user-status">Online</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-chat">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="chat-title">
+                    <h1>XtarzLab AI Content Analyzer</h1>
+                    <p>Powered by Advanced AI Agents & Gemini 1.5 Flash</p>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="message assistant-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            <h3>Welcome to XtarzLab AI Content Analyzer!</h3>
+                            <p>I'm your AI assistant powered by advanced AI agents. I can help you analyze any topic with comprehensive research, writing, and review.</p>
+                            <p>Simply enter a topic below and I'll provide you with a detailed analysis report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input-container">
+                <form id="analysisForm" class="chat-input-form">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="topic" 
+                            name="topic" 
+                            placeholder="Enter any topic you'd like me to analyze..."
+                            rows="1"
+                            required
+                        ></textarea>
+                        <button type="submit" class="send-btn" id="analyzeBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="input-footer">
+                    <p>XtarzLab AI can make mistakes. Consider checking important information.</p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
